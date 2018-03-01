@@ -4,6 +4,7 @@ from django.http import Http404
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
+from django.utils import timezone
 from .models import Question, Choice
 
 
@@ -28,6 +29,7 @@ class ResultsView(generic.DetailView):
     template_name = 'polls/results.html'
 
 
+"""
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {
@@ -45,6 +47,7 @@ def detail(request, question_id):
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question':question})
+"""
 
 
 def vote(request, question_id):
